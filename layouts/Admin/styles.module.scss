@@ -1,0 +1,18 @@
+.block-admin {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  & .right-content {
+    width: calc(100% - 330px);
+    & .right-head {
+      .username {
+        padding-right: 10px;
+      }
+      height: 50px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 12px 32px;
+    }
+  }
+}

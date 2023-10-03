@@ -1,0 +1,60 @@
+@for $i from 0 through 13 {
+  $value: $i * 5;
+  $unit: '';
+
+  @if $i != 0 {
+    $unit: 'px';
+  }
+
+  .p-#{$i * 5} {
+    padding: #{$value}#{$unit};
+  }
+  .pt-#{$i * 5} {
+    padding-top: #{$value}#{$unit};
+  }
+  .pr-#{$i * 5} {
+    padding-right: #{$value}#{$unit};
+  }
+  .pb-#{$i * 5} {
+    padding-bottom: #{$value}#{$unit};
+  }
+  .pl-#{$i * 5} {
+    padding-left: #{$value}#{$unit};
+  }
+  .pv-#{$i * 5} {
+    padding-left: #{$value}#{$unit};
+    padding-right: #{$value}#{$unit};
+  }
+  .ph-#{$i * 5} {
+    padding-bottom: #{$value}#{$unit};
+    padding-top: #{$value}#{$unit};
+  }
+}
+
+@for $i from 0 through 300 {
+  $value: $i * 5;
+  $unit: '';
+
+  @if $i !=0 {
+    $unit: 'px';
+  }
+
+  .min-width-#{$i*5} {
+    min-width: #{$value}#{$unit};
+  }
+
+  .min-parent-width-#{$i*5} {
+    width: #{$value}#{$unit};
+  }
+}
+
+.btn-type-primary-w-120,
+.btn-type-primary {
+  background-color: #2977ff;
+}
+
+.btn-type-primary-w-120,.btn-w-120 {
+  width: 120px;
+}
+
+

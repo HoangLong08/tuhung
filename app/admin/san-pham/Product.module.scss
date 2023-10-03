@@ -1,0 +1,45 @@
+.container {
+  margin: 20px 0;
+  .head {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-transform: capitalize;
+  }
+  .action {
+    display: flex;
+    justify-content: space-between;
+
+    .btnAdd {
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.image-upload {
+  position: relative;
+  display: inline-block;
+  & .icon-close {
+    position: absolute;
+    content: 'X';
+    color: red;
+    width: 25px;
+    height: 25px;
+    background: #000000bf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.modal-confirm {
+  :global(.ant-modal-confirm-btns > .ant-btn-primary) {
+    background-color: #1677ff;
+  }
+}

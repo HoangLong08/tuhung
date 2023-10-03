@@ -1,0 +1,220 @@
+@import '@/styles/mixins.scss';
+
+.block-logo {
+  width: 235px;
+}
+
+.name {
+  font-size: 18px;
+  @media (max-width: $md-max-width) {
+    font-size: 15px;
+  }
+  @media (max-width: $sm-max-width) {
+    display: none;
+  }
+}
+.menu {
+  @media (max-width: $md-max-width) {
+    visibility: hidden;
+  }
+  width: calc(100% - 225px);
+  display: flex;
+  justify-content: flex-end;
+  :global(.ant-menu-light) {
+    background: transparent;
+  }
+  :global(.ant-menu-light .ant-menu-item a) {
+    color: #1c1c1c;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  :global(.text-white) {
+    font-size: 17px;
+  }
+  :global(.ant-menu) {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  :global(.ant-menu-horizontal) {
+    border-bottom: 0px;
+  }
+  :global(.ant-menu-light.ant-menu-horizontal > .ant-menu-item::after) {
+    display: none;
+  }
+  :global(.ant-menu-light.ant-menu-horizontal > .ant-menu-submenu::after) {
+    display: none;
+  }
+  :global(.ant-menu .ant-menu-title-content) {
+    position: relative;
+  }
+  :global(.ant-menu .ant-menu-title-content::after) {
+    content: '';
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 0;
+    border-bottom: 2px solid #1677ff;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-submenu:hover
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-item-selected:hover
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+  :global(
+      .ant-menu-light
+        .ant-menu-item:not(.ant-menu-item-selected):not(
+          .ant-menu-submenu-selected
+        ):hover
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected:hover span a
+    ) {
+    color: #1677ff;
+  }
+  :global(.ant-menu-light.ant-menu-horizontal > .ant-menu-submenu:hover span) {
+    color: #1677ff;
+  }
+  :global(
+      .ant-menu-light
+        .ant-menu-item:not(.ant-menu-item-selected):not(
+          .ant-menu-submenu-selected
+        ):hover
+        span
+        a
+    ) {
+    color: #1677ff;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-submenu-selected
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal > .ant-menu-submenu-selected span
+    ) {
+    color: #1677ff;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected span a
+    ) {
+    color: #1677ff;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-item-selected
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal > .ant-menu-submenu-selected span a
+    ) {
+    color: #1677ff;
+  }
+  :global(
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-submenu-selected
+        .ant-menu-title-content::after
+    ) {
+    width: 100%;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.title-menu {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.bars {
+  @media (max-width: $md-max-width) {
+    display: inline-block;
+    & img {
+      width: 25px;
+    }
+  }
+  display: none;
+}
+
+.block-menu {
+  margin-inline: 0 !important;
+  margin-block: 0 !important;
+  max-width: 200px;
+  border-radius: 0 !important;
+  transition: border-left 19s linear;
+  &:hover {
+    border-left: 10px solid #0f3191;
+    transition: border-left 0.4s !important;
+  }
+  a {
+    transition: all 0.3s linear;
+  }
+  @media (max-width: $xs-max-width) {
+    max-width: 100%;
+  }
+}
+
+.top-bar {
+  height: 56px;
+  background: #d9d9d9;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & .text-top-bar {
+    font-size: 14px;
+    counter-reset: #000000;
+  }
+
+  @media (max-width: $xs-max-width) {
+    & span {
+      height: 5px;
+      width: 100%;
+    }
+  }
+}
+.title-menu-uppercase {
+  display: block;
+  color: #000000;
+  overflow: hidden;
+  &:hover {
+    .active {
+      animation: slideLeft 3s linear infinite;
+    }
+  }
+}
+
+.title-menu-uppercase::first-letter {
+  text-transform: uppercase;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

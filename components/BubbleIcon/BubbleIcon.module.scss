@@ -1,0 +1,162 @@
+@import '@/styles/mixins.scss';
+.container {
+  position: relative;
+  .box-icon {
+    .icon-zalo,
+    .icon-message,
+    .icon-phone,
+    .pull-up {
+      position: fixed;
+      height: 36px;
+      width: 36px;
+      right: 12px;
+      color: #fff;
+      z-index: 10000;
+      bottom: 2%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: #cdcdcd;
+      .icon {
+        font-size: 1.25rem;
+      }
+    }
+    .pull-up:hover {
+      background-color: #0024a4e5;
+    }
+    .icon-message,
+    .icon-zalo,
+    .icon-phone {
+      right: 12px;
+      bottom: 10%;
+      animation: fadeOutAnimation 0.8s ease infinite backwards;
+      .icon {
+        animation: shakeAnimation 0.8s ease infinite backwards;
+      }
+    }
+    .icon-message {
+      color: #fff;
+      bottom: 20%;
+    }
+    .icon-phone {
+      bottom: 30%;
+      display: none;
+      @media (max-width: $xs-max-width) {
+        display: block;
+      }
+    }
+    .icon-phone-list {
+      color: #fff;
+      height: 100%;
+      width: 36px;
+      left: 12px;
+      z-index: 10000;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .icon-call {
+        left: 1%;
+        width: 155px;
+        height: auto;
+        position: fixed;
+        z-index: 9999;
+        border-radius: 12px;
+        padding: 5px 10px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        .icon-call-top {
+          font-size: 14px;
+        }
+        .icon-call-bottom {
+          display: flex;
+          font-size: 12px;
+          justify-content: space-between;
+        }
+        @for $i from 1 through 7 {
+          @if ($i == 1) {
+            bottom: 15px;
+            background-color: var(--primary-color);
+          } @else { 
+            &:nth-child(#{$i}) {
+              bottom: ($i * 55px) - 40px;
+              @if ($i % 2 == 0) {
+                background-color: var(--orange-color);
+              } @else {
+                background-color: var(--primary-color);
+              }
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: $xs-max-width) {
+          display: none;
+        }
+      }
+    }
+  }
+  @keyframes shakeAnimation {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20%,
+    80% {
+      transform: rotate(15deg);
+    }
+    40%,
+    60% {
+      transform: rotate(-15deg);
+    }
+  }
+  @keyframes fadeOutAnimation {
+    0% {
+      box-shadow: 0 0 1px 2px #cdcdcd;
+    }
+    25% {
+      box-shadow: 0 0 2px 4px #cdcdcd;
+    }
+    50% {
+      box-shadow: 0 0 4px 6px #cdcdcd;
+    }
+    75% {
+      box-shadow: 0 0 6px 8px #cdcdcd;
+    }
+    100% {
+      box-shadow: 0 0 8px 10px #cdcdcd;
+    }
+  }
+}
+.icon-phone-list-modal {
+  color: #fff;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  cursor: pointer;
+  .icon-call {
+    z-index: 9999;
+    border-radius: 12px;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    background-color: var(--orange-color);
+    opacity: 0.9;
+    .icon-call-top {
+      font-size: 14px;
+    }
+    .icon-call-bottom {
+      display: flex;
+      font-size: 12px;
+      justify-content: space-between;
+    }
+  }
+  @media (max-width: ($xs-max-width-medium + 25)) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

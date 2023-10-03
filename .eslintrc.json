@@ -1,0 +1,33 @@
+{
+  "extends": ["next", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "trailingComma": "never",
+        "singleQuote": true,
+        "tabWidth": 2,
+        "endOfLine": "auto"
+      }
+    ],
+    "no-empty": "warn",
+    "no-debugger": "off",
+    "no-console": ["error", { "allow": [""] }],
+    "import/no-anonymous-default-export": [
+      "warn",
+      {
+        "allowArray": false,
+        "allowArrowFunction": false,
+        "allowAnonymousClass": false,
+        "allowAnonymousFunction": false,
+        "allowCallExpression": true, // The true value here is for backward compatibility
+        "allowNew": false,
+        "allowLiteral": false,
+        "allowObject": true
+      }
+    ]
+  }
+}

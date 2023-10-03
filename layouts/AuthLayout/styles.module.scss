@@ -1,0 +1,30 @@
+.auth {
+  --height-banner: 15rem;
+
+  .headerSpace {
+    height: var(--header-height);
+  }
+
+  .banner {
+    height: var(--height-banner);
+    background-color: #404040;
+    position: relative;
+  }
+
+  .title {
+    position: absolute;
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: bold;
+    left: 2rem;
+    top: calc(var(--height-banner) - 4rem);
+    text-shadow: 2px 7px 4px #000000ad;
+  }
+
+  .main {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

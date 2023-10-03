@@ -1,0 +1,32 @@
+@import '@/styles/mixins.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1300px;
+  z-index: 1000;
+  .main {
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    :global(.ant-btn) {
+      @media (min-width: $md-min-width) {
+        display: none;
+      }
+    }
+    @media (max-width: $xs-max-width-small) {
+      padding: 0;
+    }
+  }
+}
+
+.block {
+  height: 70px;
+  max-width: 1300px;
+}

@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+
+Host: https://theptuhung.com.vn
+
+Sitemap: https://theptuhung.com.vn//sitemap.xml

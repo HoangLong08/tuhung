@@ -1,0 +1,114 @@
+@import '@/styles/mixins.scss';
+
+.block--start {
+  margin-top: 80px;
+  @media (max-width: $xs-max-width-large) {
+    margin-top: 40px;
+  }
+}
+
+.container {
+  padding: 20px;
+}
+
+.wrapper-carousel-home {
+  position: relative;
+  overflow: hidden;
+
+  .banner-home {
+    height: 385px;
+    background-color: #eee;
+    @media (max-width: $sm-max-width) {
+      height: 100%;
+    }
+    @media (max-width: $xs-max-width-large) {
+      height: 215px;
+    }
+  }
+
+  .carousel-title-caption {
+    position: absolute;
+    width: 500px;
+    height: 160px;
+    bottom: 20%;
+    left: -50px;
+    background-color: #1100ff;
+    animation: moveAndFade 2s linear forwards;
+    z-index: 17;
+    @media (max-width: $xs-max-width-large) {
+      width: 300px;
+      height: 100px;
+    }
+  }
+
+  .carousel-title-banner {
+    position: absolute;
+    bottom: 20%;
+    left: 6%;
+    animation: fadeIn 1s linear 1s forwards;
+    opacity: 0;
+    color: white;
+    font-weight: 700;
+    color: #3f6dec;
+    border-width: 0px;
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+    text-shadow:
+      rgb(255, 255, 255) 2px 0px 0px,
+      rgb(255, 255, 255) -2px 0px 0px,
+      rgb(255, 255, 255) 0px 2px 0px,
+      rgb(255, 255, 255) 0px -2px 0px,
+      rgb(255, 255, 255) 1px 1px,
+      rgb(255, 255, 255) -1px -1px 0px,
+      rgb(255, 255, 255) 1px -1px 0px,
+      rgb(255, 255, 255) -1px 1px 0px;
+    font-size: 3rem;
+    min-width: 677px;
+    max-width: 677px;
+    @media (max-width: $sm-max-width) {
+      font-size: 32px;
+      max-width: 350px;
+      min-width: 350px;
+    }
+    @media (max-width: $xs-max-width) {
+      font-size: 25px;
+      max-width: 350px;
+      min-width: 350px;
+      bottom: 10%;
+    }
+    @media (max-width: $xs-max-width-large) {
+      font-size: 22px;
+      min-width: 277px;
+      max-width: 277px;
+    }
+  }
+}
+
+.wrapper-carousel-thumbnail {
+  @media (max-width: $xs-max-width-large) {
+    display: none;
+  }
+}
+
+@keyframes moveAndFade {
+  0% {
+    left: -200px;
+  }
+  70% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,109 @@
+.menu-left {
+  max-height: 100vh;
+  width: 300px;
+  position: relative;
+  background-color: black;
+  :global(.ant-menu-item) {
+    color: #fff;
+  }
+  :global(
+      .ant-menu-light
+        .ant-menu-item:not(.ant-menu-item-selected):not(
+          .ant-menu-submenu-selected
+        ):hover
+    ) {
+    .wrapper-icon-left {
+      svg {
+        stroke: #0060ae;
+        path,
+        ellipse,
+        circle {
+          stroke: #0060ae;
+        }
+        rect {
+          fill: #0060ae;
+        }
+      }
+    }
+  }
+  .wrapper-icon-left {
+    svg {
+      transition:
+        stroke 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+        fill 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+        color 0.6s,
+        margin 0.6s;
+      path,
+      ellipse,
+      circle,
+      rect {
+        transition:
+          stroke 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+          fill 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+          color 0.6s,
+          margin 0.6s;
+      }
+    }
+  }
+
+  :global(
+      .ant-menu-light
+        .ant-menu-item:not(.ant-menu-item-selected):not(
+          .ant-menu-submenu-selected
+        ):hover
+    ) {
+    color: #0060ae;
+  }
+
+  :global(
+      .ant-menu-light
+        .ant-menu-item:not(.ant-menu-item-selected):not(
+          .ant-menu-submenu-selected
+        ):hover
+    ) {
+    color: #0060ae;
+  }
+
+  :global(.ant-menu-inline) {
+    width: 300px;
+    background-color: black;
+    height: calc(100vh - 65px);
+  }
+  :global(.ant-menu-light .ant-menu-item-selected) {
+    background: #65646493;
+    .wrapper-icon-left {
+      svg {
+        stroke: #0060ae;
+        path,
+        ellipse,
+        circle {
+          stroke: #0060ae;
+        }
+        rect {
+          fill: #0060ae;
+        }
+      }
+    }
+  }
+  :global(.ant-menu-light.ant-menu-root.ant-menu-inline) {
+    overflow-y: auto;
+  }
+}
+
+.top-menu {
+  height: 65px;
+  background-color: #080808;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+.name {
+    color: white;
+    padding-left: 10px;
+  }
+}
+
+.menu-left-fit {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,107 @@
+@import '@/styles/mixins.scss';
+.container {
+  margin-top: 130px;
+  .image {
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      @media (max-width: $md-max-width) {
+        max-height: 400px;
+      }
+      @media (max-width: $sm-max-width) {
+        max-height: 300px;
+      }
+    }
+  }
+  .content {
+    margin-top: 32px;
+    .title {
+      font-weight: 600;
+      margin-bottom: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 35px;
+      color: red;
+      @media (max-width: $sm-max-width) {
+        font-size: 22px;
+      }
+    }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px 0;
+      flex-wrap: wrap;
+      @media (max-width: $xl-max-width) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $md-max-width) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: ($sm-max-width + 33)) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $xs-max-width) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .card {
+        height: 370px;
+        width: 280px;
+        margin: 0 auto;
+        .image {
+          height: 240px;
+          position: relative;
+          object-fit: cover;
+        }
+        .box-date {
+          width: 25%;
+          color: #fff;
+          position: absolute;
+          z-index: 10;
+          background-color: #475ea0;
+          top: 10px;
+          right: 10px;
+          padding: 5px 10px 20px 10px;
+          border-radius: 5px;
+          opacity: 0.9;
+          text-align: center;
+          .day {
+            color: #dc352c;
+            font-size: 24px;
+            font-weight: 600;
+            opacity: 1;
+          }
+          .month-and-year {
+            font-size: 14px;
+            opacity: 1;
+          }
+          @media (max-width: $md-max-width) {
+            .day {
+              font-size: 24px;
+
+              .month-and-year {
+                font-size: 16px;
+              }
+            }
+          }
+          @media (max-width: $sm-max-width) {
+            width: 22%;
+            .day {
+              font-size: 20px;
+            }
+            .month-and-year {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      :global(.ant-card .ant-card-meta-description) {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
